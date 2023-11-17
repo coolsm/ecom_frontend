@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import Navigation from "./customer/components/Navigation/navigation";
+import HomePages from "./customer/pages/HomePages/HomePages";
 
 function App() {
   const [data, setData] = useState([]);
@@ -21,25 +23,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload. Salim
-        </p>
-        {data.map((val) => {
-          return <h1>{val.name}</h1>;
-        })}
-
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
+    <div className="">
+      <Navigation />
+      <div>
+        <HomePages />
+      </div>
     </div>
   );
 }
